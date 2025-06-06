@@ -2,6 +2,7 @@ local M = {}
 
 M.options = {
   nvchad_branch = "v2.0",
+  relativenumber = true
 }
 
 M.ui = {
