@@ -10,9 +10,44 @@ M.dap = {
     ["<leader>dr"] = {
       "<cmd> DapContinue <CR>",
       "Start or continue the debugger",
-    }
-  }
+    },
+    -- ["<C-s>"] = { "<cmd>wa<cr>", "Save all files" },
+  },
+  i = {
+    -- ["<C-s>"] = { "<esc><cmd>wa<cr>", "Save all files" }, -- Exit Insert mode first
+  },
+}
+M.general = {
+  n = {
+    ["<C-s>"] = {
+      function()
+        vim.cmd("w")              -- Save file
+        vim.lsp.buf.format()       -- Format using LSP
+      end,
+      "Save and format file",
+    },
+    ["<C-a>"] = { -- "Save All"
+      function()
+        vim.cmd("wa") -- Write all open files
+        vim.cmd("bufdo lua vim.lsp.buf.format()") -- Format all buffers
+      end,
+      "Save and format all files",
+    },
+  },
+  i = {
+    ["<C-s>"] = {
+      "<Esc><cmd>w<CR><cmd>lua vim.lsp.buf.format()<CR>a",
+      "Save and format file (Insert mode)",
+    },
+  },
 }
 
-
+-- M.general = {
+--   n = {
+--     ["<C-s>"] = { "<cmd>wa<cr>", "Save all files" },
+--   },
+--   i = {
+--     ["<C-s>"] = { "<esc><cmd>wa<cr>", "Save all files" }, -- Exit Insert mode first
+--   },
+-- }
 return M
