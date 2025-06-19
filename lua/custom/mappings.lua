@@ -19,26 +19,26 @@ M.dap = {
 }
 M.general = {
   n = {
-    ["<C-s>"] = {
+    -- ["<C-s>"] = {
+    --   function()
+    --     vim.lsp.buf.format()       -- Format using LSP
+    --     vim.cmd("w")              -- Save file
+    --   end,
+    --   "Save and format file",
+    -- },
+    ["<C-s>"] = { -- "Save All"
       function()
-        vim.cmd("w")              -- Save file
-        vim.lsp.buf.format()       -- Format using LSP
-      end,
-      "Save and format file",
-    },
-    ["<C-a>"] = { -- "Save All"
-      function()
-        vim.cmd("wa") -- Write all open files
         vim.cmd("bufdo lua vim.lsp.buf.format()") -- Format all buffers
+        vim.cmd("wa") -- Write all open files
       end,
       "Save and format all files",
     },
   },
   i = {
-    ["<C-s>"] = {
-      "<Esc><cmd>w<CR><cmd>lua vim.lsp.buf.format()<CR>a",
-      "Save and format file (Insert mode)",
-    },
+    -- ["<C-s>"] = {
+    --   "<Esc><cmd>w<CR><cmd>lua vim.lsp.buf.format()<CR>a",
+    --   "Save and format file (Insert mode)",
+    -- },
   },
 }
 
