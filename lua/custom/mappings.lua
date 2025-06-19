@@ -19,13 +19,13 @@ M.dap = {
 }
 M.general = {
   n = {
-    -- ["<C-s>"] = {
-    --   function()
-    --     vim.lsp.buf.format()       -- Format using LSP
-    --     vim.cmd("w")              -- Save file
-    --   end,
-    --   "Save and format file",
-    -- },
+    ["<C-a>"] = {
+      function()
+        vim.lsp.buf.format()       -- Format using LSP
+        vim.cmd("w")              -- Save file
+      end,
+      "Save and format file",
+    },
     ["<C-s>"] = { -- "Save All"
       function()
         vim.cmd("bufdo lua vim.lsp.buf.format()") -- Format all buffers
