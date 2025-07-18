@@ -1,1 +1,1 @@
-* git clone https://github.com/conghung2302/NvChad ~/.config/nvim && nvim
+* git clone https://github.com/conghungtran/NvChad ~/.config/nvim && nvim
