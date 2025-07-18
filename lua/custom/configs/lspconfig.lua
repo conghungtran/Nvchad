@@ -11,8 +11,9 @@ lspconfig.clangd.setup {
     client.server_capabilities.signatureHelpProvider = false
 
     -- ADD THIS LINE: This disables virtual text for the current buffer
-    vim.diagnostic.config({ virtual_text = false, signs = false, underline = false,
-  })
+    vim.diagnostic.config({ 
+      virtual_text = false, signs = false, underline = false,
+    })
 
     -- Now call the original on_attach to get keymaps, etc.
     on_attach(client, bufnr)
