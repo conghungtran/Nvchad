@@ -19,20 +19,20 @@ M.dap = {
 }
 M.general = {
   n = {
-    ["<C-a>"] = {
+    ["<C-s"] = {
       function()
         vim.lsp.buf.format()       -- Format using LSP
-        vim.cmd("w")              -- Save file
+        vim.cmd("wa")              -- Save file
       end,
-      "Save and format file",
+      "Save and format  all files",
     },
-    ["<C-s>"] = { -- "Save All"
-      function()
-        vim.cmd("bufdo lua vim.lsp.buf.format()") -- Format all buffers
-        vim.cmd("wa") -- Write all open files
-      end,
-      "Save and format all files",
-    },
+    -- ["<C-s>"] = { -- "Save All"
+    --   function()
+    --     vim.cmd("bufdo lua vim.lsp.buf.format()") -- Format all buffers
+    --     vim.cmd("wa") -- Write all open files
+    --   end,
+    --   "Save and format all files",
+    -- },
   },
   i = {
     -- ["<C-s>"] = {
@@ -40,6 +40,31 @@ M.general = {
     --   "Save and format file (Insert mode)",
     -- },
   },
+}
+
+M.custom_mappings = {
+  n = {
+    -- Surround mappings
+    ["<leader>s"] = { name = "Surround", "Surround operations" },
+    ["<leader>s\""] = { 'cs"<', "Change quotes to angle brackets" },
+    ["<leader>s'"] = { "cs'<", "Change single quotes to angle brackets" },
+    ["<leader>sd"] = { 'ds"', "Delete quotes around text" },
+    
+    -- Các phím tắt surround khác - THÊM HÀNH ĐỘNG VÀO ĐÂY
+    ["<leader>sw"] = { "ysiw", "Surround word", remap = true },
+    ["<leader>sl"] = { "yss", "Surround line", remap = true },
+    
+    -- Mapping mẫu với hàm Lua (nếu cần)
+    ["<leader>st"] = {
+      function()
+        vim.notify("Surround test activated!")
+      end,
+      "Test surround functionality"
+    },
+  },
+  v = {
+    ["<leader>s"] = { "S", "Surround selection", remap = true },
+  }
 }
 
 -- M.general = {

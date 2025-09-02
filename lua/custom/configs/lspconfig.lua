@@ -20,3 +20,27 @@ lspconfig.clangd.setup {
   end,
   capabilities = capabilities,
 }
+
+-- local servers = { "gopls" }
+--
+-- for _, lsp in ipairs(servers) do
+--   lspconfig[lsp].setup {
+--     on_attach = on_attach,
+--     capabilities = capabilities,
+--   }
+-- end
+--
+-- -- Go-specific LSP configuration
+-- lspconfig.gopls.setup {
+--   on_attach = on_attach,
+--   capabilities = capabilities,
+--   settings = {
+--     gopls = {
+--       analyses = {
+--         unusedparams = true,
+--       },
+--       staticcheck = true,
+--       gofumpt = true,
+--     },
+--   },
+-- }

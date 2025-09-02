@@ -50,6 +50,16 @@ local plugins = {
     end,
   },
   {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup({
+        -- Cấu hình tùy chọn (nếu cần)
+      })
+    end
+  },
+  {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
