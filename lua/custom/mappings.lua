@@ -22,17 +22,17 @@ M.general = {
     ["<C-s"] = {
       function()
         vim.lsp.buf.format()       -- Format using LSP
-        vim.cmd("wa")              -- Save file
+        vim.cmd("w")              -- Save file
       end,
       "Save and format  all files",
     },
-    -- ["<C-s>"] = { -- "Save All"
-    --   function()
-    --     vim.cmd("bufdo lua vim.lsp.buf.format()") -- Format all buffers
-    --     vim.cmd("wa") -- Write all open files
-    --   end,
-    --   "Save and format all files",
-    -- },
+    ["<A-s>"] = { -- "Save All"
+      function()
+        vim.cmd("bufdo lua vim.lsp.buf.format()") -- Format all buffers
+        vim.cmd("wa") -- Write all open files
+      end,
+      "Save and format all files",
+    },
   },
   i = {
     -- ["<C-s>"] = {
