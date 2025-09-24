@@ -21,8 +21,5 @@ gsettings set org.gnome.mutter center-new-windows true
 
 # Xóa cấu hình NVchat trong thư mục config
 rm -rf ~/.config/nvim
-# Xóa cache (nếu có)
 rm -rf ~/.cache/nvim
-
-# Xóa local state (nếu có)
 rm -rf ~/.local/share/nvim
