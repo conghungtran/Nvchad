@@ -23,11 +23,20 @@ M.general = {
     ["<C-j>"] = { "<C-w>j", "Window down" },
     ["<C-k>"] = { "<C-w>k", "Window up" },
 
-    -- save
-    ["<C-s>"] = { "<cmd> w <CR>", "Save file" },
+    -- -- save
+    -- ["<C-s>"] = { "<cmd> lua vim.lsp.buf.format() <CR>", "Save file" },
+    -- ["<C-s"] = {
+    --   function()
+    --     vim.cmd("lua vim.lsp.buf.format()")       -- Format using LSP
+    --     vim.cmd("wa")              -- Save file
+    --     -- vim.cmd("bufdo lua vim.lsp.buf.format()") -- Format all buffers
+    --     -- vim.cmd("wa") -- Write all open files
+    --   end,
+    --   "Save and format  all files",
+    -- },
 
-    -- Copy all
-    ["<C-c>"] = { "<cmd> %y+ <CR>", "Copy whole file" },
+    -- -- Copy all
+    -- ["<C-c>"] = { "<cmd> %y+ <CR>", "Copy whole file" },
 
     -- line numbers
     ["<leader>n"] = { "<cmd> set nu! <CR>", "Toggle line number" },

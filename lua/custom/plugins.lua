@@ -63,7 +63,7 @@ local plugins = {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
-        -- "clangd",
+        "clangd",
         "clang-format",
         "codelldb",
       }

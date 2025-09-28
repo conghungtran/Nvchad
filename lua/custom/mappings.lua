@@ -19,16 +19,24 @@ M.dap = {
 }
 M.general = {
   n = {
-    ["<C-s"] = {
-      function()
-        vim.lsp.buf.format()       -- Format using LSP
-        vim.cmd("w")              -- Save file
-      end,
-      "Save and format  all files",
+    -- ["<C-s>"] = { "<cmd> lua vim.lsp.buf.format() <CR>", "Save file" },
+    ["<C-s>"] = {
+      "<cmd>bufdo lua vim.lsp.buf.format()<CR><cmd>wa<CR>",
+      "Save all and format"
     },
+    -- ["<C-s"] = {
+    --   function()
+    --     vim.cmd("vim.lsp.buf.format()")       -- Format using LSP
+    --     vim.cmd("wa")              -- Save file
+    --     -- vim.cmd("bufdo lua vim.lsp.buf.format()") -- Format all buffers
+    --     -- vim.cmd("wa") -- Write all open files
+    --
+    --   end,
+    --   "Save and format  all files",
+    -- },
     ["<A-s>"] = { -- "Save All"
       function()
-        vim.cmd("bufdo lua vim.lsp.buf.format()") -- Format all buffers
+        -- vim.cmd("bufdo lua vim.lsp.buf.format()") -- Format all buffers
         vim.cmd("wa") -- Write all open files
       end,
       "Save and format all files",
@@ -44,6 +52,14 @@ M.general = {
 
 M.custom_mappings = {
   n = {
+     ["<A-s>"] = { -- "Save All"
+      function()
+        vim.cmd("bufdo lua vim.lsp.buf.format()") -- Format all buffers
+        vim.cmd("wa") -- Write all open files
+      end,
+      "Save and format all files",
+    },
+
     -- Surround mappings
     ["<leader>s"] = { name = "Surround", "Surround operations" },
     ["<leader>s\""] = { 'cs"<', "Change quotes to angle brackets" },
